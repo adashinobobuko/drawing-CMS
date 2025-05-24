@@ -1,0 +1,234 @@
+@font-face {
+    font-family: 'PixelMplus12';
+    src: url('/fonts/PixelMplus12-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MisakiGothic';
+    src: url('/fonts/misaki_gothic_2nd.ttf') format('truetype');
+}
+
+/*body {
+    font-family: 'MisakiGothic', monospace;
+}*/
+body {
+    font-family: 'PixelMplus12', monospace;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/*以下、前のページから持ってきたものなので変更予定*/
+
+/*共通*/
+body {
+    color: aliceblue;
+    background-image: url(images/kumakichi2381_TP_V.webp);
+    background-size: cover;
+    background-color: #3333334d;
+}
+
+/*タイトル*/
+.title {
+    text-align: center;
+    margin-top: 400px;
+    margin-bottom: 400px;
+    font-size: 65px;
+}
+
+@media (max-width: 800px) {
+
+    .title {
+        font-size: 30px;
+    }
+}
+
+/*aタグ*/
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.menu {
+    font-size: 25px;
+    padding: 30px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.menu a:hover {
+    color: rgb(190, 208, 224);
+}
+
+.wp-link a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.wp-link a:hover {
+    color: rgb(190, 208, 224);
+}
+
+
+/*メニュー*/
+.menu {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 5rem 0 5rem 0;
+    font-weight: bold;
+    gap: 4rem;
+}
+
+.menu a {
+    color: aliceblue;
+}
+
+.menu a:hover {
+    color: rgb(190, 208, 224)
+}
+
+@media (max-width: 800px) {
+
+    /*説明*/
+    .menu {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0 1rem 0;
+        justify-content: center;
+        text-align: center;
+        gap: 0.5rem;
+        font-weight: none;
+    }
+}
+
+/*プロフィール画像*/
+.profile {
+    text-align: center;
+}
+
+.profile img {
+    margin-top: 3.5rem;
+}
+
+/*見出し*/
+h1 {
+    background-color: hsla(261, 85%, 80%, 0.575);
+    background-size: cover;
+    padding-left: 100px;
+    margin-bottom: 3rem;
+}
+
+h2 {
+    background-size: cover;
+    margin: 0 0 3rem 0r;
+    text-align: center;
+}
+
+/*説明*/
+.infomation {
+    padding: 3rem 2rem 3rem 2.5rem;
+    color: aliceblue;
+}
+
+p {
+    background-size: cover;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+}
+
+.wp-link {
+    padding: 3rem 2rem 3rem 2.5rem;
+    color: aliceblue;
+}
+
+/*PC表示*/
+@media (min-width:800px) {
+    .infomation {
+        padding: 3rem 2rem 3rem 2.5rem;
+        color: aliceblue;
+        display: grid;
+        grid-template-columns: 45% 45%;
+        margin-left: 5.5rem;
+    }
+}
+
+/*イラスト、アイコン*/
+img {
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-left: 3rem;
+}
+
+.homepage-sample {
+    text-decoration: none;
+    margin: 0 0 2rem 4rem;
+}
+
+.homepage-sample a {
+    color: aliceblue;
+}
+
+.homepage-sample a:hover {
+    color: rgb(190, 208, 224);
+}
+
+/*問い合わせフォーム*/
+form {
+    color: aliceblue;
+    text-align: center;
+}
+
+table {
+    text-align: center;
+}
+
+td {
+    background-color: rgba(240, 248, 255, 0.521);
+}
+
+.mail_to_form {
+    text-align: center;
+}
+
+/*著作権*/
+.copyright {
+    text-align: center;
+    color: aliceblue;
+    font-size: large;
+    margin-bottom: 3rem;
+}
+
+.copyright a {
+    color: aliceblue;
+}
+
+.copyright a:hover {
+    color: rgb(190, 208, 224)
+}
+
+/*アニメーション*/
+.fadeup {
+    animation-name: fadeUpAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
