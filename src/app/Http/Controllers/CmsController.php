@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post
+use App\Models\Post;
+use App\Models\Tag;
 
 class CmsController extends Controller
 {
@@ -24,7 +25,8 @@ class CmsController extends Controller
     // 投稿作成
     public function create()
     {
-        return view('cms.form');
+        $tags = Tag::all();
+        return view('cms.form', compact('tags'));
     }
 
     // 保存処理
@@ -33,9 +35,23 @@ class CmsController extends Controller
         $validated = $request->validate([
             'title' => 'required|max:255',
             'body'  => 'required',
+            'image' => 'required|image|max:2048', // 画像のバリデーション
         ]);
+    
+        // 画像の保存処理
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('images', 'public'); // storage/app/public/images
+            $validated['image_path'] = $path; // Postモデルにimage_pathカラムが必要
+        }
+    
+        // 投稿保存
+        $post = Post::create($validated);
 
-        Post::create($validated);
+        // タグの紐付け（中間テーブル：post_tag）
+        if ($request->has('tags')) {
+            $post->tags()->attach($request->input('tags'));
+        }
+
         return redirect()->route('cms.index');
     }
     

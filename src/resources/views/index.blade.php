@@ -12,7 +12,7 @@
         </ul>
 
         <div class="main">
-            <img src="https://placehold.jp/1500x500.png" alt="メイン画像" class="fadeup">
+            <img src="" alt="メイン画像" class="fadeup">
 
         <h1 id="profile">Profile</h1>
         
